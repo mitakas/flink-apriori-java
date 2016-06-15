@@ -49,7 +49,7 @@ Steps:
 ## TODO
 
 * Tests
-* Better output when writing to file
+* Implement the `ItemSetCalculateFrequency` *RichMapFunction* in a more efficient manner
 
 ## License
 Apache License 2.0
