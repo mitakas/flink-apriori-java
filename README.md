@@ -19,13 +19,17 @@ Build the jar file using the following command:
 
 This should produce a file called `flink-apriori-java-1.0-SNAPSHOT.jar` in the `target` directory.
 
-
 ### Parameters
 
 * `input` location of the BMS-POS.dat file
 * `output` prints to stdout if not set
 * `min-support` a real number in the range (0,1]
 * `itemset-size` an integer in the range (1, Infinity]
+
+### Dependencies
+
+* [Google Guava](https://github.com/google/guava) 19.0 (Apache License 2.0)
+* [Apache Commons Lang](https://commons.apache.org/proper/commons-lang/) 3.4 (Apache License 2.0)
 
 ## Data
 Download the [KDD Cup 2000 Dataset](http://www.kdd.org/cupfiles/KDDCup2000.zip).
@@ -44,3 +48,5 @@ Steps:
 
 ## License
 MIT
+
+This project uses libraries licensed under Apache License 2.0

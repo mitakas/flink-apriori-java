@@ -22,11 +22,11 @@ under the License.
     
     <groupId>com.mitakas.flink.apriori</groupId>
     <artifactId>flink-apriori-java</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>jar</packaging>
 
-    <name>Flink Apriori</name>
-    <url>http://www.mitakas.com</url>
+    <name>Flink Apriori Java</name>
+    <url>https://github.com/mitakas/flink-apriori-java</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -353,4 +353,5 @@ under the License.
         -->
 
     </build>
+    <description>Apriori Algorithm in Apache Flink.</description>
 </project>
