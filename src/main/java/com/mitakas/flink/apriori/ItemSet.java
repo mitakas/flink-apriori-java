@@ -71,9 +71,14 @@ public class ItemSet {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("ItemSet: {");
-		sb.append(Joiner.on(", ").join(items));
-		sb.append("}\t transactions = " + numberOfTransactions + ".");
+		sb.append("ItemSet: {" + Joiner.on(", ").join(items) + "}\t" + numberOfTransactions + " transaction");
+
+		return sb.toString();
+	}
+
+	public String textFormat() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("{" + Joiner.on(", ").join(items) + "}\t" + numberOfTransactions);
 
 		return sb.toString();
 	}

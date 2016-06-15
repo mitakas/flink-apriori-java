@@ -42,18 +42,18 @@ public class Apriori {
 
 		DataSet<Tuple2<Integer, ArrayList<Integer>>> transactions = input
 				.groupBy(0)
-				.reduceGroup(new TransactionReducer());
+				.reduceGroup(new TransactionGroupReduceFunction());
 
 		// compute frequent itemsets for itemset_size = 1
 		DataSet<ItemSet> c1 = input
 				// map item to 1
-				.map(new InputMapper())
+				.map(new InputMapFunction())
 				// group by hashCode of the ItemSet
 				.groupBy(new ItemSetKeySelector())
 				// sum the number of transactions containing the ItemSet
-				.reduce(new ItemSetReducer())
+				.reduce(new ItemSetReduceFunction())
 				// remove ItemSets with frequency under the support threshold
-				.filter(new ItemSetFrequencyFilter(minNumberOfTransactions));
+				.filter(new ItemSetFrequencyFilterFunction(minNumberOfTransactions));
 
 		// start of the loop
 		// itemset_size = 2
@@ -67,7 +67,7 @@ public class Apriori {
 		// calculate actual numberOfTransactions
 		DataSet<ItemSet> selected = candidates
 				.map(new ItemSetCalculateFrequency()).withBroadcastSet(transactions, "transactions")
-				.filter(new ItemSetFrequencyFilter(minNumberOfTransactions));
+				.filter(new ItemSetFrequencyFilterFunction(minNumberOfTransactions));
 
 		// end of the loop
 		// stop when we run out of iterations or candidates is empty
@@ -75,7 +75,7 @@ public class Apriori {
 
 		if (params.has("output")) {
 			// write the final solution to file
-			output.writeAsCsv(params.get("output"), "\n", ",");
+			output.writeAsFormattedText(params.get("output"), new ItemSetTextFormatter());
 			env.execute("Flink Apriori");
 		} else {
 			System.out.println("Printing result to stdout. Use --output to specify output path.");

@@ -2,7 +2,7 @@ package com.mitakas.flink.apriori;
 
 import org.apache.flink.api.common.functions.ReduceFunction;
 
-public class ItemSetReducer implements ReduceFunction<ItemSet> {
+public class ItemSetReduceFunction implements ReduceFunction<ItemSet> {
 
 	private static final long serialVersionUID = 1L;
 

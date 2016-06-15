@@ -2,13 +2,13 @@ package com.mitakas.flink.apriori;
 
 import org.apache.flink.api.common.functions.FilterFunction;
 
-public class ItemSetFrequencyFilter implements FilterFunction<ItemSet> {
+public class ItemSetFrequencyFilterFunction implements FilterFunction<ItemSet> {
 
 	private static final long serialVersionUID = 1L;
 
 	private final long minNumberOfTransactions;
 
-	public ItemSetFrequencyFilter(long minNumberOfTransactions) {
+	public ItemSetFrequencyFilterFunction(long minNumberOfTransactions) {
 		this.minNumberOfTransactions = minNumberOfTransactions;
 	}
 

@@ -6,8 +6,7 @@ import org.apache.flink.api.common.functions.GroupReduceFunction;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.util.Collector;
 
-public class TransactionReducer
-implements GroupReduceFunction<Tuple2<Integer, Integer>, Tuple2<Integer, ArrayList<Integer>>> {
+public class TransactionGroupReduceFunction implements GroupReduceFunction<Tuple2<Integer, Integer>, Tuple2<Integer, ArrayList<Integer>>> {
 
 	private static final long serialVersionUID = 1L;
 

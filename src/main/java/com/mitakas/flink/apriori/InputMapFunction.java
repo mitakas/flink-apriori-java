@@ -3,7 +3,7 @@ package com.mitakas.flink.apriori;
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.java.tuple.Tuple2;
 
-public class InputMapper implements MapFunction<Tuple2<Integer, Integer>, ItemSet> {
+public class InputMapFunction implements MapFunction<Tuple2<Integer, Integer>, ItemSet> {
 
 	private static final long serialVersionUID = 1L;
 
