@@ -46,6 +46,11 @@ Steps:
 2. `gunzip BMS-POS.dat.gz`
 3. `sha1sum -c BMS-POS.dat.sha1`
 
+## TODO
+
+* Tests
+* Better output when writing to file
+
 ## License
 Apache License 2.0
 
