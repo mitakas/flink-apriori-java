@@ -47,6 +47,6 @@ Steps:
 3. `sha1sum -c BMS-POS.dat.sha1`
 
 ## License
-MIT
+Apache License 2.0
 
 This project uses libraries licensed under Apache License 2.0
